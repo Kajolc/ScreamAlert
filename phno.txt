@@ -1,0 +1,56 @@
+import java.io.*;
+
+public class Testing {
+    public static void main(String[] args) throws IOException {
+        BufferedReader isr = new BufferedReader(new InputStreamReader(System.in));
+        int i=1,count=0;
+        while(i<4){
+            if(i==3){
+                System.out.println("3rd contact is optional!! Do you wish to enter 3rd contact or proceed!!");
+                System.out.println("Enter 'Y' for 3rd contact or 'N' for continuing:");
+                String option = isr.readLine();
+                if(option.equalsIgnoreCase("Y")){
+            System.out.println("Person"+i+" Name:");
+            String name3=isr.readLine();
+            System.out.println("Person"+i+" Number:");
+            String phone3=isr.readLine();
+            while(phone3.length()!=10){
+                System.out.println("Enter valid number");
+                phone3=isr.readLine();
+               
+            }
+            System.out.println(name3+":"+phone3+" saved successfully");
+             count++;
+                }
+                else break;
+            }
+            else if(i==1){
+                System.out.println("Person"+i+" Name*:");
+                String name1=isr.readLine();
+                System.out.println("Person"+i+" Number*:");
+                String phone1=isr.readLine();
+                while(phone1.length()!=10){
+                System.out.println("Enter valid number");
+                phone1=isr.readLine();
+            }
+            System.out.println(name1+":"+phone1+" saved successfully"); 
+             count++;
+            }
+            else{
+                System.out.println("Person"+i+" Name*:");
+                String name2=isr.readLine();
+                System.out.println("Person"+i+" Number*:");
+                String phone2=isr.readLine();
+                while(phone2.length()!=10){
+                System.out.println("Enter valid number");
+                phone2=isr.readLine();
+            }
+            System.out.println(name2+":"+phone2+" saved successfully");
+             count++;
+            }
+            i++;
+        }
+        System.out.println(count+" Contacts saved successfully!!");
+    }
+    
+}
